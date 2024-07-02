@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.js"></script>
+  <title>Profile Picture Handler</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <body
+    ondrop="dropHandler(event);"
+    ondragleave="dragLeaveHandler(event);"
+    ondragover="dragOverHandler(event);">
+    <div id="drop_zone">
+      <div id="placeholderWrapper" class="img__wrapper img__wrapper__border">
+        <img src="icons/ic_image.png" width="48px" height="48px" />
+        <p class="placeholder" id="imgLabel">Upload or drop here</p>
+      </div>
+      <div id="imgWrapper" class="img__wrapper__ring hidden">
+        <img id="img__element" width="160px" height="160px" />
+      </div>
+      <div id="previewWrapper" class="img__wrapper img__wrapper__border hidden">
+        <img id="preview__element" width="180px" height="180px" />
+      </div>
+      <div id="croppieContainer" class="hidden"></div>
+      <div style="margin-top: 2em;"></div>
+      <div id="__pre">
+        <div style="display: flex; gap: 1em; justify-content: space-around;">
+          <label for="upload" class="button bg-blue">Upload</label>
+          <input type="file" id="upload" accept="image/*" />
+          <button class="button button-inactive" id="btnRemove">Remove</button>
+        </div>
+      </div>
+      <div id="__crop" class="hidden">
+        <div style="display: flex; gap: 1em; justify-content: space-around;">
+          <button class="button bg-blue" id="btnCrop">Crop</button>
+          <button class="button bg-white" id="btnCancelCrop">Cancel</button>
+        </div>
+      </div>
+      <div id="__confirm" class="hidden">
+        <div style="display: flex; gap: 1em; justify-content: space-around;">
+          <button class="button bg-green" id="btnConfirm">Confirm</button>
+          <button class="button bg-white" id="btnCancelConfirm">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.ts"></script>
+</body>
+</html>
